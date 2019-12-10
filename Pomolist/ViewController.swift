@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
+//    Buttons and Labels
+    @IBOutlet weak var taskName: UILabel!
     
     @IBAction func startButton(_ sender: UIButton) {
         
@@ -19,24 +21,26 @@ class ViewController: UIViewController {
         timeLeftShapeLayer.add(strokeIt, forKey: nil)
         
         endTime = Date().addingTimeInterval(timeLeft)
-         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
-    
     
     
     @IBAction func pauseButton(_ sender: UIButton) {
     }
     
+//    Variables
+    var task = "your task"
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
     var timeLeft: TimeInterval = 1500
     var endTime: Date?
     var timeLabel =  UILabel()
     var timer = Timer()
-    
-    // here you create your basic animation object to animate the strokeEnd
-    
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
+    
+    
+//    Functions
     func drawBgShape() {
         bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY), radius:
             100, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
@@ -59,6 +63,13 @@ class ViewController: UIViewController {
         timeLabel.text = timeLeft.time
         view.addSubview(timeLabel)
     }
+
+    
+    func addTask() {
+        taskName.text = task
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,11 +77,10 @@ class ViewController: UIViewController {
         drawBgShape()
         drawTimeLeftShape()
         addTimeLabel()
-        // here you define the fromValue, toValue and duration of your animation
-        strokeIt.fromValue = 0
+        addTask()
 
-   
     }
+    
     @objc func updateTime() {
     if timeLeft > 0 {
         timeLeft = endTime?.timeIntervalSinceNow ?? 0
@@ -81,6 +91,7 @@ class ViewController: UIViewController {
         }
     }
 }
+
 extension TimeInterval {
     var time: String {
         return String(format:"%02d:%02d", Int(self/60),  Int(ceil(truncatingRemainder(dividingBy: 60))) )
