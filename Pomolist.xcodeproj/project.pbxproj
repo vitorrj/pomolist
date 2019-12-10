@@ -14,6 +14,7 @@
 		9127A8932399543500398DD0 /* Pomolist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9127A8912399543500398DD0 /* Pomolist.xcdatamodeld */; };
 		9127A8952399543600398DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9127A8942399543600398DD0 /* Assets.xcassets */; };
 		9127A8982399543600398DD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9127A8962399543600398DD0 /* LaunchScreen.storyboard */; };
+		913C3FBF239FC8F0003FF17D /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913C3FBE239FC8F0003FF17D /* AddTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9127A8942399543600398DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9127A8972399543600398DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9127A8992399543600398DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		913C3FBE239FC8F0003FF17D /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				9127A8882399543500398DD0 /* AppDelegate.swift */,
 				9127A88A2399543500398DD0 /* SceneDelegate.swift */,
+				913C3FBE239FC8F0003FF17D /* AddTaskViewController.swift */,
 				9127A88C2399543500398DD0 /* ViewController.swift */,
 				9127A88E2399543500398DD0 /* Main.storyboard */,
 				9127A8942399543600398DD0 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				9127A88D2399543500398DD0 /* ViewController.swift in Sources */,
 				9127A8892399543500398DD0 /* AppDelegate.swift in Sources */,
 				9127A88B2399543500398DD0 /* SceneDelegate.swift in Sources */,
+				913C3FBF239FC8F0003FF17D /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
