@@ -22,7 +22,6 @@ class AddTaskViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let timerViewController = segue.destination as! ViewController
         timerViewController.task = taskInfo.text!
-        
     }
     
     override func viewDidLoad() {

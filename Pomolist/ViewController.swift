@@ -27,10 +27,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func pauseButton(_ sender: UIButton) {
+        timer.invalidate()
     }
     
 //    Variables
-    var task = "your task"
+    var task = "add a task to start focusing"
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
     var timeLeft: TimeInterval = 1500
@@ -41,6 +42,7 @@ class ViewController: UIViewController {
     
     
 //    Functions
+    
     func drawBgShape() {
         bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY), radius:
             100, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
@@ -49,6 +51,7 @@ class ViewController: UIViewController {
         bgShapeLayer.lineWidth = 15
         view.layer.addSublayer(bgShapeLayer)
     }
+    
     func drawTimeLeftShape() {
         timeLeftShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY), radius:
             100, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
@@ -57,17 +60,18 @@ class ViewController: UIViewController {
         timeLeftShapeLayer.lineWidth = 15
         view.layer.addSublayer(timeLeftShapeLayer)
     }
+    
     func addTimeLabel() {
         timeLabel = UILabel(frame: CGRect(x: view.frame.midX-50 ,y: view.frame.midY-25, width: 100, height: 50))
         timeLabel.textAlignment = .center
         timeLabel.text = timeLeft.time
+        timeLabel.font = UIFont(name:"Avenir", size: 25.0)
         view.addSubview(timeLabel)
     }
 
     
     func addTask() {
         taskName.text = task
-        
     }
     
     override func viewDidLoad() {
