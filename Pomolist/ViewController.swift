@@ -13,11 +13,14 @@ class ViewController: UIViewController {
 //    Buttons and Labels
     @IBOutlet weak var taskName: UILabel!
     
+    
+    @IBOutlet weak var startButtonOutlet: UIButton!
     @IBAction func startButton(_ sender: UIButton) {
         
-        strokeIt.fromValue = 0
+        strokeIt.fromValue = 0  
         strokeIt.toValue = 1
         strokeIt.duration = 1500
+        
         timeLeftShapeLayer.add(strokeIt, forKey: nil)
         
         endTime = Date().addingTimeInterval(timeLeft)
@@ -26,6 +29,7 @@ class ViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var pauseButtonOutlet: UIButton!
     @IBAction func pauseButton(_ sender: UIButton) {
         timer.invalidate()
     }
@@ -82,6 +86,11 @@ class ViewController: UIViewController {
         drawTimeLeftShape()
         addTimeLabel()
         addTask()
+        if task == "add a task to start focusing"{
+
+        startButtonOutlet.isHidden = true
+        pauseButtonOutlet.isHidden = true
+        }
 
     }
     
