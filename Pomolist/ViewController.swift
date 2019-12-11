@@ -16,7 +16,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var startButtonOutlet: UIButton!
     @IBAction func startButton(_ sender: UIButton) {
-        
+                
+        startButtonOutlet.isHidden = true
+        pauseButtonOutlet.isHidden = false
+    
         strokeIt.fromValue = 0  
         strokeIt.toValue = 1
         strokeIt.duration = 1500
@@ -31,6 +34,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var pauseButtonOutlet: UIButton!
     @IBAction func pauseButton(_ sender: UIButton) {
+        startButtonOutlet.isHidden = false
+        pauseButtonOutlet.isHidden = true
         timer.invalidate()
     }
     
@@ -82,15 +87,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(white: 0.94, alpha: 1.0)
+        
         drawBgShape()
         drawTimeLeftShape()
-        addTimeLabel()
         addTask()
-        if task == "add a task to start focusing"{
-
+        if (task == "add a task to start focusing"){
         startButtonOutlet.isHidden = true
         pauseButtonOutlet.isHidden = true
+        }else{
+            pauseButtonOutlet.isHidden = true
         }
+        
 
     }
     

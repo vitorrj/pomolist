@@ -9,6 +9,8 @@
 import UIKit
 
 class AddTaskViewController: UIViewController {
+    
+    
         
     @IBOutlet weak var taskInfo: UITextField!
     
@@ -22,6 +24,7 @@ class AddTaskViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let timerViewController = segue.destination as! ViewController
         timerViewController.task = taskInfo.text!
+        timerViewController.addTimeLabel()
     }
     
     override func viewDidLoad() {

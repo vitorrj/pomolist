@@ -12,9 +12,9 @@
 		9127A88D2399543500398DD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127A88C2399543500398DD0 /* ViewController.swift */; };
 		9127A8932399543500398DD0 /* Pomolist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9127A8912399543500398DD0 /* Pomolist.xcdatamodeld */; };
 		9127A8952399543600398DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9127A8942399543600398DD0 /* Assets.xcassets */; };
-		9127A8982399543600398DD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9127A8962399543600398DD0 /* LaunchScreen.storyboard */; };
 		913C3FBF239FC8F0003FF17D /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913C3FBE239FC8F0003FF17D /* AddTaskViewController.swift */; };
 		91CE2A10239FF16800537EAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CE2A0F239FF16800537EAE /* Main.storyboard */; };
+		91DEAD6023A150D30084EFB1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91DEAD5F23A150D30084EFB1 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +24,10 @@
 		9127A88C2399543500398DD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9127A8922399543500398DD0 /* Pomolist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomolist.xcdatamodel; sourceTree = "<group>"; };
 		9127A8942399543600398DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9127A8972399543600398DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9127A8992399543600398DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		913C3FBE239FC8F0003FF17D /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		91CE2A0F239FF16800537EAE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Main.storyboard"; sourceTree = "<group>"; };
+		91DEAD5F23A150D30084EFB1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +60,13 @@
 		9127A8872399543500398DD0 /* Pomolist */ = {
 			isa = PBXGroup;
 			children = (
-				91CE2A0F239FF16800537EAE /* Main.storyboard */,
 				9127A8882399543500398DD0 /* AppDelegate.swift */,
 				9127A88A2399543500398DD0 /* SceneDelegate.swift */,
+				91CE2A0F239FF16800537EAE /* Main.storyboard */,
 				9127A88C2399543500398DD0 /* ViewController.swift */,
 				913C3FBE239FC8F0003FF17D /* AddTaskViewController.swift */,
 				9127A8942399543600398DD0 /* Assets.xcassets */,
-				9127A8962399543600398DD0 /* LaunchScreen.storyboard */,
+				91DEAD5F23A150D30084EFB1 /* Launch Screen.storyboard */,
 				9127A8992399543600398DD0 /* Info.plist */,
 				9127A8912399543500398DD0 /* Pomolist.xcdatamodeld */,
 			);
@@ -131,8 +131,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91DEAD6023A150D30084EFB1 /* Launch Screen.storyboard in Resources */,
 				91CE2A10239FF16800537EAE /* Main.storyboard in Resources */,
-				9127A8982399543600398DD0 /* LaunchScreen.storyboard in Resources */,
 				9127A8952399543600398DD0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,17 +153,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		9127A8962399543600398DD0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9127A8972399543600398DD0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9127A89A2399543600398DD0 /* Debug */ = {
@@ -285,7 +274,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CCWFV294Q2;
 				INFOPLIST_FILE = Pomolist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +293,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CCWFV294Q2;
 				INFOPLIST_FILE = Pomolist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
