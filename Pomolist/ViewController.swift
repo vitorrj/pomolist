@@ -18,16 +18,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var startButtonOutlet: UIButton!
     @IBAction func startButton(_ sender: UIButton) {
         
+        //Prpare timer and buttons
         timeLeft = 10
         timeLabel.text = timeLeft.time
 
         startButtonOutlet.isHidden = true
-        pauseButtonOutlet.isHidden = false
+        pauseButtonOutlet.isHidden =     false
         
         
         strokeIt.fromValue = 0
         strokeIt.toValue = 1
-        strokeIt.duration = 1500
+        strokeIt.duration = 10
         timeLeftShapeLayer.add(strokeIt, forKey: nil)
         endTime = Date().addingTimeInterval(timeLeft)
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
