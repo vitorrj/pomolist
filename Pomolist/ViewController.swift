@@ -30,14 +30,17 @@ class ViewController: UIViewController {
         
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
-    
-    
+        
     @IBOutlet weak var pauseButtonOutlet: UIButton!
     @IBAction func pauseButton(_ sender: UIButton) {
         startButtonOutlet.isHidden = false
         pauseButtonOutlet.isHidden = true
         timer.invalidate()
     }
+    
+    @IBOutlet weak var setButton: UIButton!
+    
+
     
 //    Variables
     var task = "add a task to start focusing"
@@ -48,6 +51,7 @@ class ViewController: UIViewController {
     var timeLabel =  UILabel()
     var timer = Timer()
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
+    var pomodoroQuantity: Int = 0
     
     
 //    Functions
