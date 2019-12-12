@@ -10,6 +10,7 @@ import UIKit
 
 class AddTaskViewController: UIViewController {
     
+    var stepperNumber: Int = 0
     
     @IBOutlet weak var taskInfo: UITextField!
     
@@ -17,7 +18,6 @@ class AddTaskViewController: UIViewController {
     @IBOutlet weak var pomodoroLabel: UILabel!
     @IBOutlet weak var stepperOutlet: UIStepper!
     @IBAction func stepperAction(_ sender: UIStepper) {
-        var stepperNumber: Int
             stepperNumber = Int(sender.value)
         pomodoroLabel.text = "\(stepperNumber) pomodoro"
         
@@ -34,9 +34,16 @@ class AddTaskViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let timerViewController = segue.destination as! ViewController
+        
         timerViewController.task = taskInfo.text!
         timerViewController.addTimeLabel()
         timerViewController.setButton.isHidden = true
+        
+        //PREPARE POMODORO LABEL
+        timerViewController.pomodoroQuantity = stepperNumber
+        timerViewController.pomodoroQuantityLabel.isHidden = false
+        timerViewController.pomodoroQuantityLabel.text = "0 / \(stepperNumber)"
+            
     }
 
     

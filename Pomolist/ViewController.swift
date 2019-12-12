@@ -12,22 +12,24 @@ class ViewController: UIViewController {
 
 //    Buttons and Labels
     @IBOutlet weak var taskName: UILabel!
-    
+    @IBOutlet weak var setButton: UIButton!
+    @IBOutlet weak var pomodoroQuantityLabel: UILabel!
     
     @IBOutlet weak var startButtonOutlet: UIButton!
     @IBAction func startButton(_ sender: UIButton) {
-                
+        
+        timeLeft = 10
+        timeLabel.text = timeLeft.time
+
         startButtonOutlet.isHidden = true
         pauseButtonOutlet.isHidden = false
-    
-        strokeIt.fromValue = 0  
+        
+        
+        strokeIt.fromValue = 0
         strokeIt.toValue = 1
         strokeIt.duration = 1500
-        
         timeLeftShapeLayer.add(strokeIt, forKey: nil)
-        
         endTime = Date().addingTimeInterval(timeLeft)
-        
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
         
@@ -37,21 +39,19 @@ class ViewController: UIViewController {
         pauseButtonOutlet.isHidden = true
         timer.invalidate()
     }
-    
-    @IBOutlet weak var setButton: UIButton!
-    
-
+        
     
 //    Variables
     var task = "add a task to start focusing"
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
-    var timeLeft: TimeInterval = 1500
+    var timeLeft: TimeInterval = 10
     var endTime: Date?
     var timeLabel =  UILabel()
     var timer = Timer()
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
     var pomodoroQuantity: Int = 0
+    var pomodoroCurrent: Int = 0
     
     
 //    Functions
@@ -87,6 +87,11 @@ class ViewController: UIViewController {
         taskName.text = task
     }
     
+    func updatePomodoro() {
+        pomodoroCurrent = pomodoroCurrent + 1
+        pomodoroQuantityLabel.text = "\(pomodoroCurrent) / \(pomodoroQuantity)"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -101,7 +106,6 @@ class ViewController: UIViewController {
         }else{
             pauseButtonOutlet.isHidden = true
         }
-        
 
     }
     
@@ -110,7 +114,10 @@ class ViewController: UIViewController {
         timeLeft = endTime?.timeIntervalSinceNow ?? 0
         timeLabel.text = timeLeft.time
         } else {
+        pauseButtonOutlet.isHidden = true
+        startButtonOutlet.isHidden = false
         timeLabel.text = "00:00"
+        updatePomodoro()
         timer.invalidate()
         }
     }
